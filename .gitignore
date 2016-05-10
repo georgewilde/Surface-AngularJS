@@ -1,4 +1,4 @@
 archive
 node_modules
-.idea/*
-bower_components/*
+.idea
+bower_components
