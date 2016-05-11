@@ -1,5 +1,6 @@
 {
   "name": "Surface",
+  "private": true,
   "devDependencies": {
     "bower": "^1.6.7",
     "grunt": "^0.4.5",
@@ -10,5 +11,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "jshint": "^2.8.0"
   },
-  "private": true
+  "scripts": {
+    "postinstall": "bower install"
+  }
 }

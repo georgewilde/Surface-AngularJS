@@ -5,8 +5,15 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'src',
-                src: '**', //Need to exclude CSS and JS from the copy.
+                src: ['**', '!**/css/**', '!**/js/**', '!**/less/**'],
                 dest: 'dist/'
+            }
+        },
+        less: {
+            development: {
+                files: {
+                    'src/css/main.css': 'src/**/*.less'
+                }
             }
         },
         concat: {
@@ -22,46 +29,40 @@ module.exports = function (grunt) {
             },
             js: {
                 src: [
-                    'js/vendor/modernizr-2.8.3.min.js',
                     'bower_components/jquery/dist/jquery.js',
-                    'src/js/main.js'
+                    'src/**/*.js'
                 ],
                 dest: 'dist/js/main.js'
             }
         },
-        less: {
-            files: {
-                'src/less/main.less': 'src/css/main.css'
-            }
+        uglify: {
+           options: {
+               banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+               '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+           },
+           my_target: {
+                files: {
+                    'dist/js/main.min.js': ['dist/js/main.js']
+                }
+           }
         },
-        //uglify: {
-        //    options: {
-        //        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-        //    },
-        //    build: {
-        //        src: 'dist/css/reset.css',
-        //        dest: 'dist/css/main.min.css'
-        //    }
-        //},
         watch: {
             main: {
-                files: ['src/**/*', '!src/css/reset.css'],
+                files: ['src/**/*', '!src/**/*.css', '!src/**/*.less', '!src/**/*.js'],
                 tasks: ['copy']
             },
             css: {
                 files: [
-                    '**/*.css',
-                    '**/*.less',
-                    '!dist/**'
+                    'src/**/*.css',
+                    'src/**/*.less'
                 ],
                 tasks: ['less', 'concat:css']
             },
             js: {
                 files: [
-                    '**/*.js',
-                    '!dist/**'
+                    'src/**/*.js'
                 ],
-                tasks: ['concat:js']
+                tasks: ['concat:js', 'uglify']
             }
         }
     });
