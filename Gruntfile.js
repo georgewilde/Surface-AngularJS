@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'src',
-                src: '**',
+                src: '**', //Need to exclude CSS and JS from the copy.
                 dest: 'dist/'
             }
         },
@@ -15,8 +15,8 @@ module.exports = function (grunt) {
                     'bower_components/normalize-css/normalize.css',
                     'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/bootstrap/dist/css/bootstrap-theme.css',
-                    'src/reset.css',
-                    'dist/'
+                    'src/css/reset.css',
+                    'src/css/main.css'
                 ],
                 dest: 'dist/css/main.css'
             },
@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         },
         less: {
             files: {
-                'src/less/main.less': 'dist/css/main.css'
+                'src/less/main.less': 'src/css/main.css'
             }
         },
         //uglify: {
