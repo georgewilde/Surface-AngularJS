@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'src',
-                src: ['**', '!**/css/**', '!**/js/**', '!**/less/**'],
+                src: ['**', '!**/css/**', '!**/js/**', '!**/less/**', '**/js/vendor/modernizr-2.8.3.min.js'],
                 dest: 'dist/'
             }
         },
@@ -20,9 +20,9 @@ module.exports = function (grunt) {
             css: {
                 src: [
                     'bower_components/normalize-css/normalize.css',
+                    'src/css/reset.css',
                     'bower_components/bootstrap/dist/css/bootstrap.css',
                     'bower_components/bootstrap/dist/css/bootstrap-theme.css',
-                    'src/css/reset.css',
                     'src/css/main.css'
                 ],
                 dest: 'dist/css/main.css'
@@ -30,6 +30,9 @@ module.exports = function (grunt) {
             js: {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
+                    'bower_components/angular/angular.js',
+                    'bower_components/angular-resource/angular-resource.js',
+                    'bower_components/angular-route/angular-route.js',
                     'src/**/*.js'
                 ],
                 dest: 'dist/js/main.js'
