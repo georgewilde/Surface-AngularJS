@@ -1,1 +1,8 @@
-<h1>Stories</h1>
+<a class="btn btn-default" href="#/story/new">New Story</a>
+<div class="row">
+    <div ng-repeat="story in stories" class="col-sm-6">
+        <h2><a ng-href="#/story/{{story.id}}">{{story.description}}</a></h2>
+        <div>{{story.votes}} votes</div>
+        <div>Submitted by {{story.user.name}} on {{story.createdDatetime}}</div>
+    </div>
+</div>
