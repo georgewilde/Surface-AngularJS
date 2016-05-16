@@ -70,11 +70,11 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.registerTask('default', ['copy', 'less', 'concat', 'uglify']);
+
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
-
-    grunt.registerTask('default', ['copy']);
 };

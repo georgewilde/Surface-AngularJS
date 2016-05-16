@@ -1,0 +1,11 @@
+<div class="page-header">
+    <h1 class="col-sm-12">{{story.title}}</h1>
+    <small>Created by {{story.user.name}} on {{story.createdDatetime}}</small>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <p>{{story.description}}</p>
+        <a class="btn btn-danger" href="" ng-click="deleteStory(story)" ng-disabled="isDeleting">Delete</a>
+        <a class="btn btn-default" href="#/stories/{{story.id}}/edit">Edit Story</a>
+    </div>
+</div>

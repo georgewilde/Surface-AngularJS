@@ -1,0 +1,25 @@
+<h1>Edit: {{story.title}}</h1>
+<form>
+    <fieldset class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" id="title" name="title" ng-model="story.title">
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" type="text" id="description" name="description" ng-model="story.description"></textarea>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="userId">Created by</label>
+        <select ng-options="user.id as user.name for user in users" id="userId" name="userId" ng-model="story.userId"></select>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="votes">Votes</label>
+        <input class="form-control" type="text" id="votes" name="votes" ng-model="story.votes">
+    </fieldset>
+
+    <button class="btn btn-default" ng-click="cancelEditStory(story)">Cancel</button>
+    <input type="submit" class="btn btn-default" value="{{isSubmitting ? 'Saving...' : 'Save'}}" ng-click="saveStory(story)" ng-disabled="isSubmitting">
+</form>
