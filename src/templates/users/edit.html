@@ -1,0 +1,20 @@
+<h1>Edit: {{user.name}}</h1>
+<form>
+    <fieldset class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control" type="text" id="name" name="name" ng-model="user.name">
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" type="text" id="email" name="email" ng-model="user.email">
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label for="username">Username</label>
+        <input class="form-control" type="text" id="username" name="username" ng-model="user.username">
+    </fieldset>
+
+    <button class="btn btn-default" ng-click="cancelEditUser(user)">Cancel</button>
+    <input type="submit" class="btn btn-primary" value="{{isSubmitting ? 'Saving...' : 'Save'}}" ng-click="saveUser(user)" ng-disabled="isSubmitting">
+</form>

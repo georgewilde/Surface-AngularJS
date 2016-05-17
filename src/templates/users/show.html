@@ -1,0 +1,17 @@
+<div class="page-header">
+    <h1 class="col-sm-12">{{user.name}}</h1>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <ul>
+            <li>{{user.email}}</li>
+            <li>{{user.username}}</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <a class="btn btn-danger" href="" ng-click="deleteUser(user)" ng-disabled="isDeleting">Delete</a>
+        <a class="btn btn-default" href="#/users/{{user.id}}/edit">Edit User</a>
+    </div>
+</div>
