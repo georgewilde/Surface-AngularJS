@@ -3,6 +3,7 @@
     <div ng-repeat="story in stories" class="col-sm-6">
         <h2><a ng-href="#/stories/{{story.id}}">{{story.title}}</a></h2>
         <div>{{story.votes}} votes</div>
-        <div>Submitted by {{story.user.name}} on {{story.createdDatetime}}</div>
+        <div>Submitted by {{story.user.name}} {{story.createdMoment.fromNow()}}</div>
+        <a href="#0" title="My Tooltip!" data-toggle="tooltip" data-placement="top" tooltip>My Tooltip Link</a>
     </div>
 </div>

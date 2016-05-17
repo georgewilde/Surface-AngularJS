@@ -33,6 +33,8 @@ module.exports = function (grunt) {
                     'bower_components/angular/angular.js',
                     'bower_components/angular-resource/angular-resource.js',
                     'bower_components/angular-route/angular-route.js',
+                    'bower_components/moment/min/moment.min.js',
+                    'bower_components/underscore/underscore.js',
                     'src/**/*.js'
                 ],
                 dest: 'dist/js/main.js'
