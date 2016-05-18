@@ -1,22 +1,29 @@
 angular.module('Surface')
     .service('Story', ['$http', 'StoryUI', function($http, StoryUI){
-        this.retrieveAll = function() {
-                return $http({
-                method: 'GET',
-                url: '/story'
-            }).then(function(result){
+        var retrieveUrl = '/story',
+
+            handleRetrieveSuccess = function(result) {
+                addCreatedDateFormats(result.data);
                 StoryUI.model = result.data;
-            })
+            },
+
+            handleRetrieveError = function(result) {
+                console.log(result);
+            },
+
+            addCreatedDateFormats = function(stories) {
+                _.each(stories, function(story) {
+                    story.createdMoment = moment(story.createdDatetime);
+                    story.createdDatetimeUK = story.createdMoment.format("Do MMMM YYYY [at] h:ma");
+                });
+            };
+
+        this.retrieveAll = function() {
+            return $http.get(retrieveUrl).then(handleRetrieveSuccess, handleRetrieveError);
         };
 
-        this.retrieve = function(id) {
-            return $http({
-                method: 'GET',
-                url: '/story',
-                params: {'id': id}
-            }).then(function(result){
-                StoryUI.model = result.data;
-            })
+        this.retrieve = function() {
+            return $http.get(retrieveUrl + 'id=' + id).then(handleRetrieveSuccess, handleRetrieveError);
         };
     }])
     .service('StoryUI', [function() {
@@ -26,7 +33,3 @@ angular.module('Surface')
     }]);
 
 
-//_.each($scope.stories, function(story) {
-//    story.createdMoment = moment(story.createdDatetime);
-//    story.createdDatetimeUK = story.createdMoment.format("Do MMMM YYYY [at] h:ma");
-//});

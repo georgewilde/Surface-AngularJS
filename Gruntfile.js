@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'src',
-                src: ['**', '!**/css/**', '!**/js/**', '!**/less/**', '**/js/vendor/modernizr-2.8.3.min.js'],
+                src: ['**', '!**/css/**', '!**/js/**', '!**/less/**', '**/js/vendor*.js'],
                 dest: 'dist/'
             }
         },
@@ -56,6 +56,13 @@ module.exports = function (grunt) {
                 }
            }
         },
+        ngAnnotate: {
+            app1: {
+                files: {
+                    'test.js': ['src/**/*.js', '**/js/vendor/*.js']
+                }
+            }
+        },
         watch: {
             main: {
                 files: ['src/**/*', '!src/**/*.css', '!src/**/*.less', '!src/**/*.js'],
@@ -72,16 +79,27 @@ module.exports = function (grunt) {
                 files: [
                     'src/**/*.js'
                 ],
-                tasks: ['concat:js', 'uglify']
+                tasks: ['ngAnnotate', 'concat:js', 'uglify']
             }
         }
     });
 
-    grunt.registerTask('default', ['copy', 'less', 'concat', 'uglify']);
+    grunt.registerTask('default', [
+        'release'
+    ]);
+
+    grunt.registerTask('release', [
+        'copy',
+        'less',
+        'ngAnnotate',
+        'concat',
+        'uglify'
+    ]);
 
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-ng-annotate');
 };
