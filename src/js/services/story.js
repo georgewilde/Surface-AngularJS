@@ -1,9 +1,9 @@
 angular.module('Surface')
     .service('Story', function($http, StoryUI) {
-        var retrieveUrl = '/story',
+        var baseUrl = '/story',
 
             handleRetrieveSuccess = function(result) {
-                addCreatedDateFormats(result.data);
+                addAdditionalData(result.data);
                 StoryUI.model = result.data;
             },
 
@@ -11,19 +11,36 @@ angular.module('Surface')
                 console.log(result);
             },
 
-            addCreatedDateFormats = function(stories) {
-                _.each(stories, function(story) {
-                    story.createdMoment = moment(story.createdDatetime);
-                    story.createdDatetimeUK = story.createdMoment.format("Do MMMM YYYY [at] h:ma");
-                });
+            addAdditionalData = function(result) {
+                if (Array == result.constructor) {
+                    _.each(result, function(story) {
+                        addCreatedDateFormats(story);
+                    });
+                }
+                else {
+                    addCreatedDateFormats(result);
+                }
+            },
+
+            addCreatedDateFormats = function(story) {
+                story.createdMoment = moment(story.createdDatetime);
+                story.createdDatetimeUK = story.createdMoment.format("Do MMMM YYYY [at] h:ma");
             };
 
         this.retrieveAll = function() {
-            return $http.get(retrieveUrl).then(handleRetrieveSuccess, handleRetrieveError);
+            return $http.get(baseUrl).then(handleRetrieveSuccess, handleRetrieveError);
         };
 
-        this.retrieve = function() {
-            return $http.get(retrieveUrl + 'id=' + id).then(handleRetrieveSuccess, handleRetrieveError);
+        this.retrieve = function(id) {
+            return $http.get(baseUrl + '/' + id).then(handleRetrieveSuccess, handleRetrieveError);
+        };
+
+        this.save = function(story) {
+            return $http.post(baseUrl, story);
+        };
+
+        this.update = function(story) {
+            return $http.put(baseUrl + '/' + story.id, story);
         };
     })
     .service('StoryUI', [function() {

@@ -1,9 +1,20 @@
-<a class="btn btn-primary" href="#/stories/new">New Story</a>
 <div class="row">
-    <div ng-repeat="story in stories" class="col-sm-6">
-        <h2><a ng-href="#/stories/{{story.id}}">{{story.title}}</a></h2>
-        <div>{{story.votes}} votes</div>
-        <div>Submitted by {{story.user.name}} <span title="{{story.createdDatetimeUK}}" data-toggle="tooltip" data-placement="top" surface-tooltip>{{story.createdMoment.fromNow()}}</span></div>
-        <div>Submitted by {{story.user.name}} <surface-story-created-on"></surface-story-created-on></div>
+    <div class="col-sm-6 col-sm-offset-3">
+        <a class="pull-right btn btn-primary buffer-bottom" href="#/stories/new">New Story</a>
+    </div>
+</div>
+
+<div class="row storyList">
+    <div ng-repeat="story in stories | orderBy: '-votes'" class="col-sm-6 col-sm-offset-3 story clearfix" ng-click="showStory(story)">
+        <div class="voteContainer">
+            <div class="vote">
+                {{story.votes}}
+            </div>
+            votes
+        </div>
+        <div class="detailContainer">
+            <h2>{{story.title}}</h2>
+            <div>Submitted by {{story.user.name}} <surface-story-created-on story="story"></surface-story-created-on></div>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 angular.module('Surface')
     .controller('UserIndexController', function(User, $scope) {
-            $scope.users = User.query();
-        }
-    );
+        $scope.users = User.query();
+    }
+);

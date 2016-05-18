@@ -1,3 +1,68 @@
-.test {
-  color: #FFFFF5;
+body {
+  background-color: #464444;
+  color: #fcf8e3;
+}
+a {
+  color: #fcf8e3;
+}
+a:hover,
+a:focus {
+  color: #FFF;
+  text-decoration: none;
+}
+.buffer-bottom {
+  margin-bottom: 15px;
+}
+.buffer-top {
+  margin-top: 15px;
+}
+.navbar-default {
+  border: none;
+  background: #1F1F1F;
+  border-radius: 0;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  text-shadow: none;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background: #000;
+  color: #fcf8e3;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fcf8e3;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  background: #000;
+  color: #fcf8e3;
+}
+.storyList .story {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #2C2C2C;
+}
+.storyList .story:hover {
+  background-color: #1F1F1F;
+  cursor: pointer;
+}
+.storyList .voteContainer {
+  float: left;
+  margin-right: 15px;
+  text-align: center;
+}
+.storyList .voteContainer .vote {
+  background-color: #FF00E0;
+  height: 75px;
+  width: 75px;
+  text-align: center;
+  font-size: 50px;
+}
+.storyList .detailContainer {
+  margin-left: 90px;
+}
+.storyList .detailContainer h2 {
+  margin-top: 0;
 }

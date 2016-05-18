@@ -1,23 +1,25 @@
 angular.module('Surface')
     .controller('StoryNewController', function(Story, $scope, $location) {
-            $scope.story = new Story();
-            $scope.isSubmitting = false;
+        // TODO: Find out how to get an instance of the Story model now this the service is using $http.
+        $scope.story = new Story();
 
-            $scope.saveNewStory = function(story) {
-                $scope.isSubmitting = true;
+        $scope.isSubmitting = false;
 
-                story.votes = 0;
-                story.createdDatetime = moment().format('YYYY-MM-DD HH:mm:ss');
+        $scope.saveNewStory = function(story) {
+            $scope.isSubmitting = true;
 
-                story.$save().then(function() {
-                    $location.path('/');
-                }).finally(function() {
-                    $scope.isSubmitting = false;
-                });
-            };
+            story.votes = 0;
+            story.createdDatetime = moment().format('YYYY-MM-DD HH:mm:ss');
 
-            $scope.cancelNewStory = function() {
+            Story.save().then(function() {
                 $location.path('/');
-            };
-        }
-    );
+            }).finally(function() {
+                $scope.isSubmitting = false;
+            });
+        };
+
+        $scope.cancelNewStory = function() {
+            $location.path('/');
+        };
+    }
+);

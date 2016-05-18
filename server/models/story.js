@@ -2,7 +2,12 @@ var _ = require('lodash');
 var Comment = require('./comment');
 var User = require('./user');
 var stories = [
-  {"id":1 ,"userId": 1, "title": "Client support want a way of prioritising development tasks", "description": "The client support team have been finding it difficult to pass prioritised tasks over to the Ninja team. We need a system that will allow them to do this easily.", "votes": 0, "createdDatetime": "2016-05-12 22:29:10"},
+  {"id":1 ,"userId": 1, "title": "Client support want a way of prioritising development tasks", "description": "The client support team have been finding it difficult to pass prioritised tasks over to the Ninja team. We need a system that will allow them to do this easily.", "votes": 10, "createdDatetime": "2016-05-12 22:29:10"},
+  {"id":2 ,"userId": 3, "title": "Developers want to separate tests from data", "description": "Some of the service tests are tightly coupled to real data. When this data changes the tests fail. The tests should be improved to include their own data.", "votes": 4, "createdDatetime": "2016-05-08 20:06:10"},
+  {"id":3 ,"userId": 2, "title": "Developers want a reliable way to commit to SVN", "description": "Hare SVN is reported as being flakey and causing frustration.", "votes": 8, "createdDatetime": "2016-04-12 12:19:12"},
+  {"id":4 ,"userId": 4, "title": "Developers want fast build times when deploying code", "description": "The build time is currently getting in the way of productivity.", "votes": 20, "createdDatetime": "2016-04-08 14:43:30"},
+  {"id":5 ,"userId": 3, "title": "Developers want a guide of things to check when servers are running slowly", "description": "When the servers are running slowly it would be useful to have a quick guide of things to check that might help identify the cause of the problem.", "votes": 0, "createdDatetime": "2016-01-12 12:29:10"},
+  {"id":6 ,"userId": 1, "title": "Developers want better inter-team communication", "description": "Some have mentioned that the teams don't collaborate together well enough and this impacts performance.", "votes": 0, "createdDatetime": "2016-05-01 13:34:21"},
 ];
 var lastId = 6;
 
