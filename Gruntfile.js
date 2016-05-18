@@ -52,14 +52,14 @@ module.exports = function (grunt) {
            },
            my_target: {
                 files: {
-                    'dist/js/main.min.js': ['dist/js/main.js']
+                    'dist/js/main.js': ['dist/js/main.js']
                 }
            }
         },
         ngAnnotate: {
             app1: {
                 files: {
-                    'test.js': ['src/**/*.js', '**/js/vendor/*.js']
+                    'test.js': ['src/**/*.js', '!**/js/vendor/*.js']
                 }
             }
         },
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
                 files: [
                     'src/**/*.js'
                 ],
-                tasks: ['ngAnnotate', 'concat:js', 'uglify']
+                tasks: ['ngAnnotate', 'concat:js']
             }
         }
     });
