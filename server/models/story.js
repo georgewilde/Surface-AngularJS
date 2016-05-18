@@ -2,7 +2,7 @@ var _ = require('lodash');
 var Comment = require('./comment');
 var User = require('./user');
 var stories = [
-  {"id":1 ,"userId": 1, "title": "Developers want a voting system", "description": "The client support team have been finding it difficult to pass prioritised tasks over to the Ninja team. We need a system that will allow them to do this easily.", "votes": 0, "createdDatetime": "2016-05-12 22:29:10"},
+  {"id":1 ,"userId": 1, "title": "Client support want a way of prioritising development tasks", "description": "The client support team have been finding it difficult to pass prioritised tasks over to the Ninja team. We need a system that will allow them to do this easily.", "votes": 0, "createdDatetime": "2016-05-12 22:29:10"},
 ];
 var lastId = 6;
 

@@ -1,7 +1,10 @@
 angular.module('Surface')
     .controller('StoryEditController', [
-        'Story', 'User', '$scope', '$routeParams', '$location', function(Story, User, $scope, $routeParams, $location) {
-            $scope.story = Story.get({id: $routeParams.id});
+        'Story', 'StoryUI', 'User', '$scope', '$routeParams', '$location', function(Story, StoryUI, User, $scope, $routeParams, $location) {
+            Story.retrieve($routeParams.id).then(function() {
+                $scope.story = StoryUI.model;
+            });
+
             $scope.users = User.query();
             $scope.isSubmitting = false;
 

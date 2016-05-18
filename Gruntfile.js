@@ -17,6 +17,9 @@ module.exports = function (grunt) {
             }
         },
         concat: {
+            options: {
+                sourceMap: true
+            },
             css: {
                 src: [
                     'bower_components/normalize-css/normalize.css',
@@ -30,6 +33,7 @@ module.exports = function (grunt) {
             js: {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
+                    'bower_components/bootstrap/dist/js/bootstrap.js',
                     'bower_components/angular/angular.js',
                     'bower_components/angular-resource/angular-resource.js',
                     'bower_components/angular-route/angular-route.js',
@@ -43,7 +47,8 @@ module.exports = function (grunt) {
         uglify: {
            options: {
                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-               '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
+               '<%= grunt.template.today("yyyy-mm-dd") %> */\n',
+               sourceMap: true
            },
            my_target: {
                 files: {
