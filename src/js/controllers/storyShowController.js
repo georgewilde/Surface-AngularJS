@@ -1,6 +1,5 @@
 angular.module('Surface')
-    .controller('StoryShowController', [
-        'Story', '$scope', '$routeParams', '$location', function(Story, $scope, $routeParams, $location) {
+    .controller('StoryShowController', function(Story, $scope, $routeParams, $location) {
             $scope.story = Story.get({id: $routeParams.id});
             $scope.isDeleting = false;
 
@@ -12,4 +11,4 @@ angular.module('Surface')
                 })
             }
         }
-    ]);
+    );

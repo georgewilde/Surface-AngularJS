@@ -1,5 +1,4 @@
 angular.module('Surface')
-    .controller('AccountIndexController', [
-        '$scope', function($scope) {
+    .controller('AccountIndexController', function($scope) {
         }
-    ]);
+    );

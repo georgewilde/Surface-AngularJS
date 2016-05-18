@@ -39,7 +39,7 @@ module.exports = function (grunt) {
                     'bower_components/angular-route/angular-route.js',
                     'bower_components/moment/min/moment.min.js',
                     'bower_components/underscore/underscore.js',
-                    'src/**/*.js'
+                    'dist/js/annotated.js'
                 ],
                 dest: 'dist/js/main.js'
             }
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
         ngAnnotate: {
             app1: {
                 files: {
-                    'test.js': ['src/**/*.js', '!**/js/vendor/*.js']
+                    'dist/js/annotated.js': ['src/**/*.js', '!src/js/vendor/*.js']
                 }
             }
         },
@@ -94,6 +94,10 @@ module.exports = function (grunt) {
         'ngAnnotate',
         'concat',
         'uglify'
+    ]);
+
+    grunt.registerTask('develop', [
+        'watch'
     ]);
 
     grunt.loadNpmTasks('grunt-contrib-copy');

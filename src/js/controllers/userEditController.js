@@ -1,6 +1,5 @@
 angular.module('Surface')
-    .controller('UserEditController', [
-        'User', '$scope', '$routeParams', '$location', function(User, $scope, $routeParams, $location) {
+    .controller('UserEditController', function(User, $scope, $routeParams, $location) {
             $scope.user = User.get({id: $routeParams.id});
             $scope.isSubmitting = false;
 
@@ -17,4 +16,4 @@ angular.module('Surface')
                 $location.path('/users/' + user.id)
             };
         }
-    ]);
+    );

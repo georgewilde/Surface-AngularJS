@@ -1,6 +1,5 @@
 angular.module('Surface')
-    .controller('StoryNewController', [
-        'Story', '$scope', '$location', function(Story, $scope, $location) {
+    .controller('StoryNewController', function(Story, $scope, $location) {
             $scope.story = new Story();
             $scope.isSubmitting = false;
 
@@ -21,4 +20,4 @@ angular.module('Surface')
                 $location.path('/');
             };
         }
-    ]);
+    );

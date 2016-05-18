@@ -1,6 +1,5 @@
 angular.module('Surface')
-    .controller('StoryEditController', [
-        'Story', 'StoryUI', 'User', '$scope', '$routeParams', '$location', function(Story, StoryUI, User, $scope, $routeParams, $location) {
+    .controller('StoryEditController', function(Story, StoryUI, User, $scope, $routeParams, $location) {
             Story.retrieve($routeParams.id).then(function() {
                 $scope.story = StoryUI.model;
             });
@@ -21,4 +20,4 @@ angular.module('Surface')
                 $location.path('/stories/' + story.id)
             };
         }
-    ]);
+    );

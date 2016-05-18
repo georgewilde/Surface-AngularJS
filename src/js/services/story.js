@@ -1,5 +1,5 @@
 angular.module('Surface')
-    .service('Story', ['$http', 'StoryUI', function($http, StoryUI){
+    .service('Story', function($http, StoryUI) {
         var retrieveUrl = '/story',
 
             handleRetrieveSuccess = function(result) {
@@ -25,7 +25,7 @@ angular.module('Surface')
         this.retrieve = function() {
             return $http.get(retrieveUrl + 'id=' + id).then(handleRetrieveSuccess, handleRetrieveError);
         };
-    }])
+    })
     .service('StoryUI', [function() {
         return {
             model: {}
