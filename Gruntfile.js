@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'src',
-                src: ['**', '!**/css/**', '!**/js/**', '!**/less/**', '**/js/vendor*.js'],
+                src: ['**', '!**/css/**', '!**/js/**', '**/js/directives/*.html', '!**/less/**', '**/js/vendor*.js'],
                 dest: 'dist/'
             }
         },
@@ -24,8 +24,6 @@ module.exports = function (grunt) {
                 src: [
                     'bower_components/normalize-css/normalize.css',
                     'src/css/reset.css',
-                    'bower_components/bootstrap/dist/css/bootstrap.css',
-                    'bower_components/bootstrap/dist/css/bootstrap-theme.css',
                     'src/css/main.css'
                 ],
                 dest: 'dist/css/main.css'
@@ -63,6 +61,15 @@ module.exports = function (grunt) {
                 }
             }
         },
+        'customize-bootstrap': {
+            development: {
+                options: {
+                    bootstrapPath: 'bower_components/bootstrap/',
+                    src: 'src/css/bootstrap/',
+                    dest: 'src/css/',
+                }
+            },
+        },
         watch: {
             main: {
                 files: ['src/**/*', '!src/**/*.css', '!src/**/*.less', '!src/**/*.js'],
@@ -73,7 +80,7 @@ module.exports = function (grunt) {
                     'src/**/*.css',
                     'src/**/*.less'
                 ],
-                tasks: ['less', 'concat:css']
+                tasks: ['customize-bootstrap', 'less', 'concat:css']
             },
             js: {
                 files: [
@@ -106,4 +113,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-ng-annotate');
+    grunt.loadNpmTasks('grunt-customize-bootstrap');
 };

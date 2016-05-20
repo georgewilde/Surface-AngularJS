@@ -1,8 +1,6 @@
 angular.module('Surface')
     .controller('StoryNewController', function(Story, $scope, $location) {
-        // TODO: Find out how to get an instance of the Story model now this the service is using $http.
         $scope.story = Story;
-
         $scope.isSubmitting = false;
 
         $scope.saveNewStory = function(story) {

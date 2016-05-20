@@ -3,7 +3,7 @@ angular.module('Surface')
             return {
                 replace: true,
                 restrict: 'E',
-                templateUrl: 'templates/directives/surfacePageNav.html',
+                templateUrl: 'js/directives/surfacePageNav.html',
                 controller: ['$scope', '$location', function($scope, $location) {
                     $scope.isCurrentPage = function(name) {
                         return new RegExp('/' + name + '($|/)').test($location.path());

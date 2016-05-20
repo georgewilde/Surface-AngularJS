@@ -3,7 +3,7 @@ angular.module('Surface')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'templates/directives/surfaceStoryCreatedOn.html',
+            templateUrl: 'js/directives/surfaceStoryCreatedOn.html',
             scope: "="
         };
     });
