@@ -1,4 +1,8 @@
-<span title="{{story.createdDatetimeUK}}"
+<small>
+    Created by {{story.user.name}}
+    <span title="{{story.createdDatetimeUK}}"
       data-toggle="tooltip"
       data-placement="top"
+      class="tooltip-primary"
       surface-tooltip>{{story.createdMoment.fromNow()}}</span>
+</small>

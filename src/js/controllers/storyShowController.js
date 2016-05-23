@@ -11,7 +11,11 @@ angular.module('Surface')
             story.$remove().then(function() {
                 $scope.isDeleting = false;
                 $location.path('/stories');
-            })
-        }
+            });
+        };
+
+        $scope.cancelShowStory = function() {
+            $location.path('/stories');
+        };
     }
 );

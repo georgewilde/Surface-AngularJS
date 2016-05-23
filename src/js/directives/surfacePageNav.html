@@ -1,5 +1,20 @@
 <ul class="nav navbar-nav">
-    <li ng-class="{'active': isCurrentPage('stories')}"><a href="#/stories/">Stories</a></li>
-    <li ng-class="{'active': isCurrentPage('users')}"><a href="#/users/">Users</a></li>
-    <li ng-class="{'active': isCurrentPage('account')}"><a href="#/account/">My Account</a></li>
+    <li ng-class="{'active': isCurrentPage('stories')}">
+        <a href="#/stories/">
+            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+            Stories
+        </a>
+    </li>
+    <li ng-class="{'active': isCurrentPage('users')}">
+        <a href="#/users/">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+            Users
+        </a>
+    </li>
+    <li ng-class="{'active': isCurrentPage('account')}">
+        <a href="#/account/">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            My Account
+        </a>
+    </li>
 </ul>

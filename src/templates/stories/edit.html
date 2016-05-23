@@ -1,25 +1,47 @@
-<h1>Edit: {{story.title}}</h1>
-<form>
-    <fieldset class="form-group">
-        <label for="title">Title</label>
-        <input class="form-control" type="text" id="title" name="title" ng-model="story.title">
-    </fieldset>
+<div class="page">
+    <div class="page-header">
+        <h1>{{story.title}}</h1>
+        <surface-story-created-on story="story"></surface-story-created-on>
+    </div>
+    <form class="form-horizontal buffer-top">
+        <fieldset class="form-group">
+            <label for="title" class="control-label col-sm-2">Title</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" id="title" name="title" ng-model="story.title">
+            </div>
+        </fieldset>
 
-    <fieldset class="form-group">
-        <label for="description">Description</label>
-        <textarea class="form-control" type="text" id="description" name="description" ng-model="story.description"></textarea>
-    </fieldset>
+        <fieldset class="form-group">
+            <label for="description" class="control-label col-sm-2">Description</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" type="text" id="description" name="description" ng-model="story.description"></textarea>
+            </div>
+        </fieldset>
 
-    <fieldset class="form-group">
-        <label for="userId">Created by</label>
-        <select ng-options="user.id as user.name for user in users" id="userId" name="userId" ng-model="story.userId"></select>
-    </fieldset>
+        <fieldset class="form-group">
+            <label for="userId" class="control-label col-sm-2">Created by</label>
+            <div class="col-sm-10">
+                <select class="form-control" ng-options="user.id as user.name for user in users" id="userId" name="userId" ng-model="story.userId"></select>
+            </div>
+        </fieldset>
 
-    <fieldset class="form-group">
-        <label for="votes">Votes</label>
-        <input class="form-control" type="text" id="votes" name="votes" ng-model="story.votes">
-    </fieldset>
+        <fieldset class="form-group">
+            <label for="votes" class="control-label col-sm-2">Votes</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" id="votes" name="votes" ng-model="story.votes">
+            </div>
+        </fieldset>
 
-    <button class="btn btn-default" ng-click="cancelEditStory(story)">Cancel</button>
-    <input type="submit" class="btn btn-primary" value="{{isSubmitting ? 'Saving...' : 'Save'}}" ng-click="saveStory(story)" ng-disabled="isSubmitting">
-</form>
+        <button class="btn btn-default" ng-click="cancelEditStory(story)">
+            <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
+            Cancel
+        </button>
+        <button type="submit"
+                class="btn btn-primary"
+                ng-click="saveStory(story)"
+                ng-disabled="isSubmitting">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            {{isSubmitting ? 'Saving...' : 'Save'}}
+        </button>
+    </form>
+</div>
