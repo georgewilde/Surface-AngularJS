@@ -13,7 +13,7 @@ angular.module('Surface')
                 $location.path('/stories/' + story.id);
             }).finally(function() {
                 $scope.isSubmitting = false;
-            })
+            });
         };
 
         $scope.cancelEditStory = function(story) {
