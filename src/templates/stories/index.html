@@ -9,7 +9,7 @@
 <div class="row storyList">
     <div ng-repeat="story in stories | orderBy: '-votes'" class="col-sm-12 story clearfix" ng-click="showStory(story)">
         <div class="voteContainer">
-            <div class="vote">
+            <div class="vote bg-primary">
                 {{story.votes}}
             </div>
             votes

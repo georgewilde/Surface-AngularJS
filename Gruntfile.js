@@ -12,7 +12,7 @@ module.exports = function (grunt) {
         less: {
             development: {
                 files: {
-                    'src/css/main.css': 'src/**/*.less'
+                    'src/css/main.css': ['src/**/*.less', '!src/bootstrap/*.less']
                 }
             }
         },
