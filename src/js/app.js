@@ -1,1 +1,1 @@
-angular.module('Surface', ['ngRoute', 'ngResource']);
+angular.module('Surface', ['ngRoute', 'ngResource', 'ngAnimate', 'angular-velocity']);

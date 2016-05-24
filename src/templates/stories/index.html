@@ -1,13 +1,8 @@
-<div class="row">
-    <div class="col-sm-12">
-        <a class="pull-right btn btn-primary buffer-bottom" href="#/stories/new">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            New Story</a>
-    </div>
-</div>
-
 <div class="row storyList">
-    <div ng-repeat="story in stories | orderBy: '-votes'" class="col-sm-12 story clearfix" ng-click="showStory(story)">
+    <div ng-repeat="story in stories | orderBy: '-votes'"
+         class="col-sm-12 story clearfix velocity-transition-fadeIn"
+         data-velocity-opts="{ stagger: 60 }"
+         ng-click="showStory(story)">
         <div class="voteContainer">
             <div class="vote bg-primary">
                 {{story.votes}}

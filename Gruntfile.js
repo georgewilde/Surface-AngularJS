@@ -32,11 +32,16 @@ module.exports = function (grunt) {
                 src: [
                     'bower_components/jquery/dist/jquery.js',
                     'bower_components/bootstrap/dist/js/bootstrap.js',
+                    'bower_components/velocity/velocity.js',
+                    'bower_components/velocity/velocity.ui.js',
                     'bower_components/angular/angular.js',
                     'bower_components/angular-resource/angular-resource.js',
                     'bower_components/angular-route/angular-route.js',
+                    'bower_components/angular-animate/angular-animate.js',
+                    'bower_components/velocity-ui-angular/velocity.ui.angular.js',
                     'bower_components/moment/min/moment.min.js',
                     'bower_components/underscore/underscore.js',
+                    'src/js/vendor/angular-velocity.js',
                     'src/js/annotated.js'
                 ],
                 dest: 'dist/js/main.js'

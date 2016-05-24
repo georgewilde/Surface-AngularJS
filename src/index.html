@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -19,13 +20,26 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <div class="navbar-brand">
-                    <a href="/#/">Surface</a>
+                    <object class="logo pull-left" width="30" type="image/svg+xml" data="images/surface-logo.svg">
+                        Your browser does not support SVG.
+                    </object>
+                    <a href="/#/">
+                        <span class="logoText pull-left">SURFACE</span>
+                    </a>
                 </div>
             </div>
             <surface-page-nav></surface-page-nav>
         </div>
     </nav>
     <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
+                <a class="pull-right btn btn-primary buffer-bottom" href="#/stories/new">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    New Story
+                </a>
+            </div>
+        </div>
         <div class="row">
             <div ng-view class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3"></div>
         </div>

@@ -1066,7 +1066,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #fcf8e3;
@@ -5958,7 +5958,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6076,7 +6076,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6740,6 +6740,18 @@ h1 {
   border: none;
   background: #1F1F1F;
   border-radius: 0;
+}
+.navbar-default .navbar-brand {
+  padding: 13px 15px;
+}
+.navbar-default .navbar-brand a {
+  color: #e84238;
+}
+.navbar-default .navbar-brand a:hover {
+  color: #FFF;
+}
+.navbar-default .navbar-brand .logoText {
+  padding: 3px 0 0px 15px;
 }
 .navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li > a {
