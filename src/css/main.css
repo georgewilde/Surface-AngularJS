@@ -6830,3 +6830,14 @@ h1 {
   text-align: center;
   font-family: 'Lato', sans-serif;
 }
+.commentsHeader h2 {
+  margin: 50px 30px 10px;
+}
+.commentsHeader .btn {
+  margin: 50px 0 0;
+}
+.commentContainer {
+  background-color: #2C2C2C;
+  padding: 30px;
+  margin-top: 15px;
+}

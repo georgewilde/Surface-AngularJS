@@ -30,3 +30,33 @@
         </div>
     </div>
 </div>
+<div class="row commentsHeader">
+    <div class="col-sm-6">
+        <h2 class="comments">Comments</h2>
+    </div>
+    <div class="col-sm-6">
+        <a class="pull-right btn btn-primary buffer-bottom" href="#/comments/new">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            Add a Comment
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="commentContainer velocity-transition-fadeIn"
+             data-velocity-opts="{ stagger: 100 }"
+             ng-repeat="comment in comments | orderBy: '-createdDatetime'">
+            <div>{{comment.commentText}}</div>
+            <div class="pull-right">
+                <small>
+                    {{comment.user.name}}
+                        <span uib-tooltip="{{comment.createdDatetime | date: constants.dateTimeUk}}"
+                              class="tooltip-primary"
+                              surface-tooltip>
+                            {{comment.createdDatetime | relativeDate}}
+                        </span>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>

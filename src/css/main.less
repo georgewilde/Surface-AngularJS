@@ -1,5 +1,7 @@
 @import (reference) "bootstrap/variables";
 
+@page-bg: #2C2C2C;
+
 a:hover,
 a:focus {
     color: #FFF;
@@ -57,7 +59,7 @@ h1 {
 }
 .page {
 	padding: 30px;
-	background-color: #2C2C2C;
+	background-color: @page-bg;
 }
 .storyList {
     .story {
@@ -120,4 +122,18 @@ h1 {
         text-align: center;
         font-family: 'Lato', sans-serif;
     }
+}
+.commentsHeader {
+    h2 {
+        margin: 50px 30px 10px;
+    }
+
+    .btn {
+        margin: 50px 0 0;
+    }
+}
+.commentContainer {
+    background-color: @page-bg;
+    padding: 30px;
+    margin-top: 15px;
 }
