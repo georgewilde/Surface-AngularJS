@@ -6798,11 +6798,20 @@ h1 {
   font-size: 40px;
 }
 .storyList .detailContainer {
-  margin-left: 90px;
+  margin-left: 110px;
 }
 .storyList .detailContainer h2 {
   margin-top: 0;
 }
 .storyList .addVoteButton {
   margin-right: 5px;
+}
+.userList .user {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #2C2C2C;
+}
+.userList .user:hover {
+  background-color: #1F1F1F;
+  cursor: pointer;
 }

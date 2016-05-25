@@ -3,28 +3,11 @@ angular.module('Surface')
         var baseUrl = '/story',
 
             handleRetrieveSuccess = function(result) {
-                addAdditionalData(result.data);
                 StoryUI.model = result.data;
             },
 
             handleRetrieveError = function(result) {
                 console.log(result);
-            },
-
-            addAdditionalData = function(result) {
-                if (Array == result.constructor) {
-                    _.each(result, function(story) {
-                        addCreatedDateFormats(story);
-                    });
-                }
-                else {
-                    addCreatedDateFormats(result);
-                }
-            },
-
-            addCreatedDateFormats = function(story) {
-                story.createdMoment = moment(story.createdDatetime);
-                story.createdDatetimeUK = story.createdMoment.format("Do MMMM YYYY [at] h:ma");
             };
 
         this.retrieveAll = function() {
@@ -47,6 +30,5 @@ angular.module('Surface')
         return {
             model: {}
         }
-    }]);
-
-
+    }]
+);

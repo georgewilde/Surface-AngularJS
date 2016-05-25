@@ -1,4 +1,13 @@
-<h1>Users</h1>
-<ul ng-repeat="user in users">
-    <li><a ng-href="#/users/{{user.id}}">{{user.name}}</a></li>
-</ul>
+<div class="row userList">
+    <div ng-repeat="user in users | orderBy: 'name'"
+         class="col-sm-12 user clearfix velocity-transition-fadeIn"
+         data-velocity-opts="{ stagger: 60 }"
+         ng-click="showUser(user)">
+        <div class="userContainer">
+            <h2>{{user.name}}</h2>
+        </div>
+    </div>
+
+<!--<ul ng-repeat="user in users">-->
+    <!--<li><a ng-href="#/users/{{user.id}}">{{user.name}}</a></li>-->
+<!--</ul>-->

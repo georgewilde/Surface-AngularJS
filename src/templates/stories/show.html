@@ -1,3 +1,8 @@
+<div class="row">
+    <div class="col-xs-12">
+        <surface-new-story-button></surface-new-story-button>
+    </div>
+</div>
 <div class="page">
     <div class="page-header">
         <h1>{{story.title}}</h1>
@@ -10,10 +15,10 @@
     </div>
     <div class="row buffer-top">
         <div class="col-sm-12">
-            <button class="btn btn-default" ng-click="cancelShowStory(story)">
+            <a class="btn btn-default" href="#/stories">
                 <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
                 Back to Stories
-            </button>
+            </a>
             <button class="btn btn-danger" ng-click="deleteStory(story)" ng-disabled="isDeleting">
                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                 Delete

@@ -4,6 +4,9 @@ angular.module('Surface')
             replace: true,
             restrict: 'E',
             templateUrl: 'js/directives/surfaceStoryCreatedOn.html',
-            scope: "="
+            scope: "=",
+            controller: function($scope, SurfaceConstants) {
+                $scope.constants = SurfaceConstants;
+            }
         };
     });

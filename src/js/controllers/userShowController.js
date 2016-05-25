@@ -9,6 +9,6 @@ angular.module('Surface')
                 $scope.isDeleting = false;
                 $location.path('/users');
             })
-        }
+        };
     }
 );

@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             main: {
                 expand: true,
                 cwd: 'src',
-                src: ['**', '!**/css/**', '!**/js/**', '**/js/directives/*.html', '!**/less/**', '**/js/vendor*.js'],
+                src: ['**', '!**/css/**', '!**/js/**', '**/js/directives/*.html', '!**/less/**', '**/js/vendor/*.js'],
                 dest: 'dist/'
             }
         },
@@ -39,6 +39,7 @@ module.exports = function (grunt) {
                     'bower_components/angular-route/angular-route.js',
                     'bower_components/angular-animate/angular-animate.js',
                     'bower_components/velocity-ui-angular/velocity.ui.angular.js',
+                    'bower_components/angular-relative-date/dist/angular-relative-date.js',
                     'bower_components/moment/min/moment.min.js',
                     'bower_components/underscore/underscore.js',
                     'src/js/vendor/angular-velocity.js',
@@ -108,7 +109,14 @@ module.exports = function (grunt) {
         'uglify'
     ]);
 
-    grunt.registerTask('develop', [
+    grunt.registerTask('prepare_develop', [
+        'copy',
+        'less',
+        'ngAnnotate',
+        'concat'
+    ]);
+
+    grunt.registerTask('watch', [
         'watch'
     ]);
 

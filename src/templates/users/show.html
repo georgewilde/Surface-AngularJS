@@ -1,17 +1,30 @@
-<div class="page-header">
-    <h1 class="col-sm-12">{{user.name}}</h1>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <ul>
-            <li>{{user.email}}</li>
-            <li>{{user.username}}</li>
-        </ul>
+<div class="page">
+    <div class="page-header">
+        <h1>{{user.name}}</h1>
     </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <a class="btn btn-danger" href="" ng-click="deleteUser(user)" ng-disabled="isDeleting">Delete</a>
-        <a class="btn btn-default" href="#/users/{{user.id}}/edit">Edit User</a>
+    <div class="row">
+        <div class="col-sm-12">
+            <ul>
+                <li>Email: {{user.email}}</li>
+                <li>Username: {{user.username}}</li>
+                <li>Member since: {{user.createdDatetime}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <a class="btn btn-default" href="#/users">
+                <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
+                Back to Users
+            </a>
+            <button class="btn btn-danger" ng-click="deleteUser(user)" ng-disabled="isDeleting">
+                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                Delete
+            </button>
+            <a class="btn btn-primary" href="#/users/{{user.id}}/edit">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                Edit User
+            </a>
+        </div>
     </div>
 </div>

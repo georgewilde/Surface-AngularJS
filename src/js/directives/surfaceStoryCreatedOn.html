@@ -1,8 +1,8 @@
 <small>
     Created by {{story.user.name}}
-    <span title="{{story.createdDatetimeUK}}"
+    <span title="{{story.createdDatetime | date: constants.dateTimeUk}}"
       data-toggle="tooltip"
       data-placement="top"
       class="tooltip-primary"
-      surface-tooltip>{{story.createdMoment.fromNow()}}</span>
+      surface-tooltip>{{story.createdDatetime | relativeDate}}</span>
 </small>

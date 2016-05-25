@@ -13,9 +13,5 @@ angular.module('Surface')
                 $location.path('/stories');
             });
         };
-
-        $scope.cancelShowStory = function() {
-            $location.path('/stories');
-        };
     }
 );
