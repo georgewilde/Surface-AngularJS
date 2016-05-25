@@ -3,9 +3,12 @@ angular.module('Surface', [
     'ngResource',
     'ngAnimate',
     'angular-velocity',
-    'relativeDate'
+    'relativeDate',
+    'ui.bootstrap',
+    'angular-confirm'
 ])
     .constant('SurfaceConstants', {
-        'dateTimeUk': "d MMMM yyyy 'at' h:ma"
+        'dateTimeUk': "d MMMM yyyy 'at' h:ma",
+        'dateUk': "d MMMM yyyy"
     }
 );

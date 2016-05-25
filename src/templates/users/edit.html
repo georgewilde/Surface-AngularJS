@@ -1,20 +1,40 @@
-<h1>Edit: {{user.name}}</h1>
-<form>
-    <fieldset class="form-group">
-        <label for="name">Name</label>
-        <input class="form-control" type="text" id="name" name="name" ng-model="user.name">
-    </fieldset>
+<div class="page">
+    <div class="page-header">
+        <h1>{{user.name}}</h1>
+        <surface-user-created-on story="story"></surface-user-created-on>
+    </div>
+    <form class="form-horizontal buffer-top">
+        <fieldset class="form-group">
+            <label for="name" class="control-label col-sm-2">Name</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" id="name" name="name" ng-model="user.name">
+            </div>
+        </fieldset>
 
-    <fieldset class="form-group">
-        <label for="email">Email</label>
-        <input class="form-control" type="text" id="email" name="email" ng-model="user.email">
-    </fieldset>
+        <fieldset class="form-group">
+            <label for="email" class="control-label col-sm-2">Email</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" id="email" name="email" ng-model="user.email">
+            </div>
+        </fieldset>
 
-    <fieldset class="form-group">
-        <label for="username">Username</label>
-        <input class="form-control" type="text" id="username" name="username" ng-model="user.username">
-    </fieldset>
+        <fieldset class="form-group">
+            <label for="username" class="control-label col-sm-2">Username</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" id="username" name="username" ng-model="user.username">
+            </div>
+        </fieldset>
 
-    <button class="btn btn-default" ng-click="cancelEditUser(user)">Cancel</button>
-    <input type="submit" class="btn btn-primary" value="{{isSubmitting ? 'Saving...' : 'Save'}}" ng-click="saveUser(user)" ng-disabled="isSubmitting">
-</form>
+        <a class="btn btn-default" href="#/users/{{user.id}}">
+            <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
+            Cancel
+        </a>
+        <button type="submit"
+                class="btn btn-primary"
+                ng-click="saveUser(user)"
+                ng-disabled="isSubmitting">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            {{isSubmitting ? 'Saving...' : 'Save'}}
+        </button>
+    </form>
+</div>

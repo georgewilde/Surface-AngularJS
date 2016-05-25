@@ -5873,7 +5873,7 @@ button.close {
 }
 .modal-content {
   position: relative;
-  background-color: #fff;
+  background-color: #464444;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0px;
@@ -5889,7 +5889,7 @@ button.close {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #000;
+  background-color: #2C2C2C;
 }
 .modal-backdrop.fade {
   opacity: 0;
@@ -5901,7 +5901,7 @@ button.close {
 }
 .modal-header {
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #2C2C2C;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -5917,7 +5917,7 @@ button.close {
 .modal-footer {
   padding: 15px;
   text-align: right;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #2C2C2C;
 }
 .modal-footer .btn + .btn {
   margin-left: 5px;
@@ -6002,7 +6002,7 @@ button.close {
   padding: 3px 8px;
   color: #fff;
   text-align: center;
-  background-color: #2a9fd6;
+  background-color: #5D5D5D;
   border-radius: 0px;
 }
 .tooltip-arrow {
@@ -6017,56 +6017,56 @@ button.close {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #2a9fd6;
+  border-top-color: #5D5D5D;
 }
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
   right: 5px;
   margin-bottom: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #2a9fd6;
+  border-top-color: #5D5D5D;
 }
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   left: 5px;
   margin-bottom: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #2a9fd6;
+  border-top-color: #5D5D5D;
 }
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #2a9fd6;
+  border-right-color: #5D5D5D;
 }
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #2a9fd6;
+  border-left-color: #5D5D5D;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #2a9fd6;
+  border-bottom-color: #5D5D5D;
 }
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   right: 5px;
   margin-top: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #2a9fd6;
+  border-bottom-color: #5D5D5D;
 }
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   left: 5px;
   margin-top: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #2a9fd6;
+  border-bottom-color: #5D5D5D;
 }
 .popover {
   position: absolute;
@@ -6814,4 +6814,19 @@ h1 {
 .userList .user:hover {
   background-color: #1F1F1F;
   cursor: pointer;
+}
+.commentCount {
+  font-size: 30px;
+  position: relative;
+  color: #77b300;
+}
+.commentCount .commentCountText {
+  font-size: 14px;
+  position: absolute;
+  color: #fcf8e3;
+  left: 0;
+  top: 5px;
+  width: 30px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
 }

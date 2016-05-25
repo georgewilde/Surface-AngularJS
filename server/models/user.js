@@ -15,5 +15,33 @@ module.exports = {
   },
   all: function() {
     return users;
+  },
+  update: function(user) {
+    var updatedUser;
+    for(var i=0, l=users.length; i < l; i++) {
+      if(users[i].id === user.id){
+        _.assign(users[i], user);
+        updatedUser = users[i];
+        break;
+      }
+    }
+    return updatedUser;
+  },
+  delete: function(id) {
+    var deletedUser;
+    for(var i=0, l=users.length; i < l; i++) {
+      if(users[i].id === id){
+        deletedUser = users[i];
+        users.splice(i, 1);
+        break;
+      }
+    }
+    return deletedUser;
+  },
+  create: function(user) {
+    lastId += 1;
+    user.id = lastId;
+    users.push(user)
+    return user;
   }
 };

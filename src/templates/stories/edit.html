@@ -37,10 +37,10 @@
             </div>
         </fieldset>
 
-        <button class="btn btn-default" ng-click="cancelEditStory(story)">
+        <a class="btn btn-default" href="#/stories/{{story.id}}">
             <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
             Cancel
-        </button>
+        </a>
         <button type="submit"
                 class="btn btn-primary"
                 ng-click="saveStory(story)"

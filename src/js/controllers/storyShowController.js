@@ -8,7 +8,7 @@ angular.module('Surface')
 
         $scope.deleteStory = function(story) {
             $scope.isDeleting = true;
-            story.$remove().then(function() {
+            Story.delete(story).then(function() {
                 $scope.isDeleting = false;
                 $location.path('/stories');
             });

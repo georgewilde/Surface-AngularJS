@@ -1,8 +1,8 @@
 <small>
     Created by {{story.user.name}}
-    <span title="{{story.createdDatetime | date: constants.dateTimeUk}}"
-      data-toggle="tooltip"
-      data-placement="top"
-      class="tooltip-primary"
-      surface-tooltip>{{story.createdDatetime | relativeDate}}</span>
+    <span uib-tooltip="{{story.createdDatetime | date: constants.dateTimeUk}}"
+          class="tooltip-primary"
+          surface-tooltip>
+        {{story.createdDatetime | relativeDate}}
+    </span>
 </small>

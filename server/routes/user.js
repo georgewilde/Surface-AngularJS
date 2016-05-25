@@ -11,4 +11,12 @@ module.exports = function(app) {
 
     res.json(User.get(userId) || {});
   });
+
+  app.put('/user/:id', function(req, res) {
+    // Add a delay here to simulate the delay of a live server
+    // So things like button isSubmitting states can be demonstrated
+    setTimeout(function() {
+      res.json(User.update(req.body));
+    }, 1000)
+  });
 };

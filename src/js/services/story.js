@@ -25,6 +25,10 @@ angular.module('Surface')
         this.update = function(story) {
             return $http.put(baseUrl + '/' + story.id, story);
         };
+
+        this.delete = function(story) {
+            return $http.delete(baseUrl + '/' + story.id, story);
+        };
     })
     .service('StoryUI', [function() {
         return {

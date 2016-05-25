@@ -1,9 +1,9 @@
 <div class="row userList">
     <div ng-repeat="user in users | orderBy: 'name'"
-         class="col-sm-12 user clearfix velocity-transition-fadeIn"
+         class="col-sm-6 velocity-transition-fadeIn"
          data-velocity-opts="{ stagger: 60 }"
          ng-click="showUser(user)">
-        <div class="userContainer">
+        <div class="userContainer user clearfix">
             <h2>{{user.name}}</h2>
         </div>
     </div>

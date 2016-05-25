@@ -10,10 +10,18 @@ angular.module('Surface')
             $location.path('/stories/' + story.id);
         };
 
-        $scope.addVote = function(story, voteValue) {
+        $scope.addVote = function(story, voteValue, $event) {
             story.votes += voteValue;
 
+            $('#' + story.id + 'Vote').numerator({
+                toValue: story.votes,
+                duration: 300,
+                easing: 'linear'
+            });
+
             Story.update(story);
+
+            $($event.target).blur();
         };
     }
 );

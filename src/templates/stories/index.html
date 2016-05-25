@@ -9,7 +9,7 @@
          data-velocity-opts="{ stagger: 60 }"
          ng-click="showStory(story)">
         <div class="voteContainer">
-            <div class="vote bg-primary">
+            <div id="{{story.id}}Vote" class="vote bg-primary">
                 {{story.votes}}
             </div>
         </div>
@@ -19,10 +19,13 @@
             <div class="buffer-top">
                 <button type="button"
                         ng-repeat="voteValue in availableVoteValues"
-                        class="btn-xs btn btn-success addVoteButton"
-                        ng-click="addVote(story, voteValue); $event.stopPropagation();">
+                        class="btn-sm btn btn-success addVoteButton"
+                        ng-click="addVote(story, voteValue, $event); $event.stopPropagation();">
                     {{voteValue}}
                 </button>
+                <div class="pull-right">
+                    <span class="glyphicon glyphicon-comment commentCount" aria-hidden="true"><span class="commentCountText">{{story.commentCount}}</span></span>
+                </div>
             </div>
         </div>
     </div>

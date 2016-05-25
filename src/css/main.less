@@ -1,3 +1,5 @@
+@import (reference) "bootstrap/variables";
+
 a:hover,
 a:focus {
     color: #FFF;
@@ -101,5 +103,21 @@ h1 {
     .user:hover {
         background-color: #1F1F1F;
         cursor: pointer;
+    }
+}
+.commentCount {
+    font-size: 30px;
+    position: relative;
+    color: @brand-success;
+
+    .commentCountText {
+        font-size: 14px;
+        position: absolute;
+        color: @text-color;
+        left: 0;
+        top: 5px;
+        width: 30px;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
     }
 }
