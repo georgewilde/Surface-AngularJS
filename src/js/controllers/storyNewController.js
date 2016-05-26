@@ -7,7 +7,8 @@ angular.module('Surface')
             $scope.isSubmitting = true;
 
             story.votes = 0;
-            story.createdDatetime = moment().format('YYYY-MM-DD HH:mm:ss');
+            story.createdDatetime = new Date();
+            // story.createdDatetime = moment().format('YYYY-MM-DD HH:mm:ss');
 
             Story.save(story).then(function() {
                 $location.path('/');

@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h3>Add a comment</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal">
+        <fieldset class="form-group">
+            <label for="commentText">Description</label>
+            <textarea class="form-control" type="text" id="commentText" name="commentText" ng-model="comment.commentText"></textarea>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="saveNewComment()">
+        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        Save
+    </button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>

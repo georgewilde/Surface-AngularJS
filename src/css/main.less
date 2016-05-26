@@ -2,6 +2,9 @@
 
 @page-bg: #2C2C2C;
 
+body {
+    padding-top: 70px;
+}
 a:hover,
 a:focus {
     color: #FFF;
@@ -136,4 +139,14 @@ h1 {
     background-color: @page-bg;
     padding: 30px;
     margin-top: 15px;
+}
+
+.mainPage.ng-enter {
+    -webkit-animation:fadeIn 0.2s both ease-out;
+    -moz-animation:fadeIn 0.2s both ease-out;
+    animation:fadeIn 0.2s both ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

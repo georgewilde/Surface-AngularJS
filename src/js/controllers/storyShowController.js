@@ -1,5 +1,5 @@
 angular.module('Surface')
-    .controller('StoryShowController', function(Story, StoryUI, Comment, $scope, $routeParams, $location) {
+    .controller('StoryShowController', function(Story, StoryUI, Comment, $scope, $routeParams, $location, $uibModal) {
         Story.retrieve($routeParams.id).then(function() {
             $scope.story = StoryUI.model;
         });
@@ -12,6 +12,22 @@ angular.module('Surface')
             Story.delete(story).then(function() {
                 $scope.isDeleting = false;
                 $location.path('/stories');
+            });
+        };
+
+        $scope.addComment = function() {
+            var modalInstance = $uibModal.open({
+                templateUrl: 'templates/comments/new.html',
+                controller: 'CommentNewController',
+                resolve: {
+                    comment: function () {
+                        return $scope.items;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function (selectedItem) {
+                $scope.selected = selectedItem;
             });
         };
     }

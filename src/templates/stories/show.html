@@ -21,11 +21,9 @@
             </a>
             <button class="btn btn-danger" ng-click="deleteStory(story)" ng-disabled="isDeleting" confirm="Are you sure you want to delete this story?">
                 <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                Delete
             </button>
             <a class="btn btn-primary" href="#/stories/{{story.id}}/edit">
                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                Edit Story
             </a>
         </div>
     </div>
@@ -35,10 +33,10 @@
         <h2 class="comments">Comments</h2>
     </div>
     <div class="col-sm-6">
-        <a class="pull-right btn btn-primary buffer-bottom" href="#/comments/new">
+        <button class="pull-right btn btn-primary buffer-bottom" ng-click="addComment()">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
             Add a Comment
-        </a>
+        </button>
     </div>
 </div>
 <div class="row">
