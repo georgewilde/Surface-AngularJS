@@ -29,6 +29,10 @@ var buildComments = function() {
         builtComments.push(comment);
     }
 
+    builtComments.sort(function(a,b){
+        return new Date(b.createdDatetime) - new Date(a.createdDatetime);
+    });
+
     return builtComments;
 };
 
@@ -45,5 +49,13 @@ module.exports = {
 
     byStory: function(storyId) {
         return _.where(buildComments(), {storyId: storyId});
+    },
+
+    create: function(comment) {
+        lastId += 1;
+        comment.id = lastId;
+        comments.push(comment);
+
+        return comment;
     }
 };

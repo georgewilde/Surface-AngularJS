@@ -6739,6 +6739,14 @@ h1 {
 .buffer-top {
   margin-top: 15px;
 }
+.fixed {
+  position: fixed;
+}
+@media (min-width: 768px) {
+  .fixed {
+    position: inherit;
+  }
+}
 .navbar-default {
   border: none;
   background: #1F1F1F;
@@ -6836,13 +6844,13 @@ h1 {
 .commentsHeader h2 {
   margin: 50px 30px 10px;
 }
-.commentsHeader .btn {
-  margin: 50px 0 0;
-}
 .commentContainer {
   background-color: #2C2C2C;
   padding: 30px;
   margin-top: 15px;
+}
+.commentPage {
+  padding-bottom: 30px;
 }
 .mainPage.ng-enter {
   -webkit-animation: fadeIn 0.2s both ease-out;

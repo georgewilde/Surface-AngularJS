@@ -2,9 +2,9 @@ angular.module('Surface')
     .service('Story', function($http, StoryUI) {
         var baseUrl = '/story',
 
-            handleRetrieveSuccess = function(result) {
-                StoryUI.model = result.data;
-            },
+        handleRetrieveSuccess = function(result) {
+            StoryUI.model = result.data;
+        },
 
             handleRetrieveError = function(result) {
                 console.log(result);

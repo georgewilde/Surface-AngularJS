@@ -1,35 +1,24 @@
 angular.module('Surface')
-    .directive('surfaceNewCommentController', function() {
+    .directive('surfaceNewComment', function() {
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'js/directives/surfaceNewComment.html'
+            scope: '=',
+            templateUrl: 'js/directives/surfaceNewComment.html',
+            controller: function($scope, Comment) {
+                $scope.comment = new Comment();
+                $scope.isSubmitting = false;
+
+                $scope.saveNewComment = function() {
+                    $scope.comment.createdDatetime = new Date();
+                    $scope.comment.storyId = $scope.story.id;
+                    $scope.comment.userId = (Math.floor(Math.random() * 4) + 1);
+                    $scope.comment.$save();
+
+                    $scope.comments.unshift(angular.copy($scope.comment));
+                    $scope.comment = new Comment();
+                };
+            }
         };
     }
 );
-
-
-//angular.module('Surface')
-//    .directive('surfaceNewCommentController', function(Comment, $scope, $uibModalInstance) {
-//        $scope.comment = new Comment();
-//        $scope.isSubmitting = false;
-//
-//        $scope.saveNewComment = function(comment) {
-//            $scope.isSubmitting = true;
-//
-//            comment.createdDatetime = new Date();
-//            comment.storyId = 999;
-//            comment.userId = 999;
-//
-//            Comment.save(comment).then(function() {
-//                // $location.path('/');
-//            }).finally(function() {
-//                $scope.isSubmitting = false;
-//            });
-//        };
-//
-//        $scope.cancel = function () {
-//            $uibModalInstance.dismiss('cancel');
-//        };
-//    }
-//);

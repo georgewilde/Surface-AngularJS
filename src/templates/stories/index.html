@@ -1,30 +1,35 @@
 <div class="row">
-    <div class="col-xs-12">
-        <surface-new-story-button></surface-new-story-button>
-    </div>
-</div>
-<div class="row storyList">
-    <div ng-repeat="story in stories | orderBy: '-votes'"
-         class="col-sm-12 story clearfix velocity-transition-fadeIn"
-         data-velocity-opts="{ stagger: 60 }"
-         ng-click="showStory(story)">
-        <div class="voteContainer">
-            <div id="{{story.id}}Vote" class="vote bg-primary">
-                {{story.votes}}
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
+        <div class="row">
+            <div class="col-xs-12">
+                <surface-new-story-button></surface-new-story-button>
             </div>
         </div>
-        <div class="detailContainer">
-            <h2>{{story.title}}</h2>
-            <surface-story-created-on story="story"></surface-story-created-on>
-            <div class="buffer-top">
-                <button type="button"
-                        ng-repeat="voteValue in availableVoteValues"
-                        class="btn-sm btn btn-success addVoteButton"
-                        ng-click="addVote(story, voteValue, $event); $event.stopPropagation();">
-                    {{voteValue}}
-                </button>
-                <div class="pull-right">
-                    <span class="glyphicon glyphicon-comment commentCount" aria-hidden="true"><span class="commentCountText">{{story.commentCount}}</span></span>
+        <div class="row storyList">
+            <div ng-repeat="story in stories | orderBy: '-votes'"
+                 class="col-sm-12 story clearfix velocity-transition-fadeIn"
+                 data-velocity-opts="{ stagger: 60 }"
+                 ng-click="showStory(story)">
+                <div class="voteContainer">
+                    <div id="{{story.id}}Vote" class="vote bg-primary">
+                        {{story.votes}}
+                    </div>
+                </div>
+                <div class="detailContainer">
+                    <h2>{{story.title}}</h2>
+                    <surface-story-created-on story="story"></surface-story-created-on>
+                    <div class="buffer-top">
+                        <button type="button"
+                                ng-repeat="voteValue in availableVoteValues"
+                                class="btn-sm btn btn-success addVoteButton"
+                                ng-click="addVote(story, voteValue, $event); $event.stopPropagation();">
+                            {{voteValue}}
+                        </button>
+                        <div class="pull-right">
+                        <span class="glyphicon glyphicon-comment commentCount" aria-hidden="true"><span
+                                class="commentCountText">{{story.commentCount}}</span></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

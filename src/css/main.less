@@ -20,6 +20,14 @@ h1 {
 .buffer-top {
     margin-top: 15px;
 }
+.fixed {
+    position: fixed;
+}
+@media (min-width: @screen-sm-min) {
+    .fixed {
+        position: inherit;
+    }
+}
 .navbar-default {
     border: none;
     background: #1F1F1F;
@@ -130,17 +138,15 @@ h1 {
     h2 {
         margin: 50px 30px 10px;
     }
-
-    .btn {
-        margin: 50px 0 0;
-    }
 }
 .commentContainer {
     background-color: @page-bg;
     padding: 30px;
     margin-top: 15px;
 }
-
+.commentPage {
+    padding-bottom: 30px;
+}
 .mainPage.ng-enter {
     -webkit-animation:fadeIn 0.2s both ease-out;
     -moz-animation:fadeIn 0.2s both ease-out;

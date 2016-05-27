@@ -14,4 +14,8 @@ module.exports = function(app) {
         var storyId = parseInt(req.param('id'), 10);
         res.json(Comment.byStory(storyId) || {});
     });
+
+    app.post('/comment', function(req, res) {
+        res.json(Comment.create(req.body));
+    });
 };

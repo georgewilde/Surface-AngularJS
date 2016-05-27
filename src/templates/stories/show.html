@@ -3,57 +3,56 @@
         <surface-new-story-button></surface-new-story-button>
     </div>
 </div>
-<div class="page">
-    <div class="page-header">
-        <h1>{{story.title}}</h1>
-        <surface-story-created-on story="story"></surface-story-created-on>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <p>{{story.description}}</p>
-        </div>
-    </div>
-    <div class="row buffer-top">
-        <div class="col-sm-12">
-            <a class="btn btn-default" href="#/stories">
-                <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
-                Back to Stories
-            </a>
-            <button class="btn btn-danger" ng-click="deleteStory(story)" ng-disabled="isDeleting" confirm="Are you sure you want to delete this story?">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </button>
-            <a class="btn btn-primary" href="#/stories/{{story.id}}/edit">
-                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-            </a>
-        </div>
-    </div>
-</div>
-<div class="row commentsHeader">
-    <div class="col-sm-6">
-        <h2 class="comments">Comments</h2>
-    </div>
-    <div class="col-sm-6">
-        <button class="pull-right btn btn-primary buffer-bottom" ng-click="addComment()">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-            Add a Comment
-        </button>
-    </div>
-</div>
 <div class="row">
-    <div class="col-sm-12">
-        <div class="commentContainer velocity-transition-fadeIn"
-             data-velocity-opts="{ stagger: 100 }"
-             ng-repeat="comment in comments | orderBy: '-createdDatetime'">
-            <div>{{comment.commentText}}</div>
-            <div class="pull-right">
-                <small>
-                    {{comment.user.name}}
+    <div class="col-xs-12 col-md-6">
+        <div class="page fixed">
+            <div class="page-header">
+                <h1>{{story.title}}</h1>
+                <surface-story-created-on story="story"></surface-story-created-on>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>{{story.description}}</p>
+                </div>
+            </div>
+            <div class="row buffer-top">
+                <div class="col-sm-12">
+                    <a class="btn btn-default" href="#/stories">
+                        <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
+                        Back to Stories
+                    </a>
+                    <button class="btn btn-danger" ng-click="deleteStory(story)" ng-disabled="isDeleting"
+                            confirm="Are you sure you want to delete this story?">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                    <a class="btn btn-primary" href="#/stories/{{story.id}}/edit">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6 commentPage">
+        <div class="page">
+            <surface-new-comment story="story"></surface-new-comment>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="commentContainer velocity-transition-fadeIn"
+                     data-velocity-opts="{ stagger: 100 }"
+                     ng-repeat="comment in comments track by $index">
+                    <div>{{comment.commentText}}</div>
+                    <div class="pull-right">
+                        <small>
+                            {{comment.user.name}}
                         <span uib-tooltip="{{comment.createdDatetime | date: constants.dateTimeUk}}"
                               class="tooltip-primary"
                               surface-tooltip>
                             {{comment.createdDatetime | relativeDate}}
                         </span>
-                </small>
+                        </small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
