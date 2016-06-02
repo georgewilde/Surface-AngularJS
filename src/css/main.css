@@ -6739,14 +6739,6 @@ h1 {
 .buffer-top {
   margin-top: 15px;
 }
-.fixed {
-  position: fixed;
-}
-@media (min-width: 768px) {
-  .fixed {
-    position: inherit;
-  }
-}
 .navbar-default {
   border: none;
   background: #1F1F1F;
@@ -6785,6 +6777,7 @@ h1 {
 .page {
   padding: 30px;
   background-color: #2C2C2C;
+  margin-bottom: 15px;
 }
 .storyList .story {
   margin-bottom: 10px;
@@ -6795,26 +6788,26 @@ h1 {
   background-color: #1F1F1F;
   cursor: pointer;
 }
-.storyList .voteContainer {
+.voteContainer {
   float: left;
   margin-right: 15px;
   text-align: center;
   padding: 10px;
 }
-.storyList .voteContainer .vote {
+.voteContainer .vote {
   padding-top: 9px;
   height: 75px;
   width: 75px;
   text-align: center;
   font-size: 40px;
 }
-.storyList .detailContainer {
+.detailContainer {
   margin-left: 110px;
 }
-.storyList .detailContainer h2 {
+.detailContainer h2 {
   margin-top: 0;
 }
-.storyList .addVoteButton {
+.addVoteButton {
   margin-right: 5px;
 }
 .userList .user {
@@ -6841,13 +6834,13 @@ h1 {
   text-align: center;
   font-family: 'Lato', sans-serif;
 }
-.commentsHeader h2 {
-  margin: 50px 30px 10px;
+#AddNewComment .commentText {
+  height: 100px;
 }
 .commentContainer {
   background-color: #2C2C2C;
   padding: 30px;
-  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .commentPage {
   padding-bottom: 30px;

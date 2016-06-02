@@ -5,13 +5,22 @@
 </div>
 <div class="row">
     <div class="col-xs-12 col-md-6">
-        <div class="page fixed">
-            <div class="page-header">
-                <h1>{{story.title}}</h1>
-                <surface-story-created-on story="story"></surface-story-created-on>
+        <div class="page">
+            <div class="row">
+                <div class="col-xs-12">
+                    <surface-story-current-votes story="story"></surface-story-current-votes>
+                    <div class="detailContainer">
+                        <h2>{{story.title}}</h2>
+                        <surface-story-created-on story="story"></surface-story-created-on>
+                        <div class="buffer-top">
+                            <surface-vote-buttons story="story"></surface-vote-buttons>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-xs-12">
                     <p>{{story.description}}</p>
                 </div>
             </div>
@@ -19,7 +28,7 @@
                 <div class="col-sm-12">
                     <a class="btn btn-default" href="#/stories">
                         <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
-                        Back to Stories
+                        Back
                     </a>
                     <button class="btn btn-danger" ng-click="deleteStory(story)" ng-disabled="isDeleting"
                             confirm="Are you sure you want to delete this story?">

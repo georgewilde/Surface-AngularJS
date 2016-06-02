@@ -8,7 +8,7 @@ angular.module('Surface')
 
             story.votes = 0;
             story.createdDatetime = new Date();
-            // story.createdDatetime = moment().format('YYYY-MM-DD HH:mm:ss');
+            story.userId = (Math.floor(Math.random() * 4) + 1);
 
             Story.save(story).then(function() {
                 $location.path('/');

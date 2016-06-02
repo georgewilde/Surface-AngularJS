@@ -5,18 +5,24 @@ angular.module('Surface')
             restrict: 'E',
             scope: '=',
             templateUrl: 'js/directives/surfaceNewComment.html',
+
             controller: function($scope, Comment) {
                 $scope.comment = new Comment();
                 $scope.isSubmitting = false;
 
                 $scope.saveNewComment = function() {
+                    $scope.isSubmitting = true;
+
                     $scope.comment.createdDatetime = new Date();
                     $scope.comment.storyId = $scope.story.id;
                     $scope.comment.userId = (Math.floor(Math.random() * 4) + 1);
-                    $scope.comment.$save();
 
-                    $scope.comments.unshift(angular.copy($scope.comment));
-                    $scope.comment = new Comment();
+                    $scope.comment.$save().then(function() {
+                        $scope.comments.unshift(angular.copy($scope.comment));
+                        $scope.comment = new Comment();
+                    }).finally(function() {
+                        $scope.isSubmitting = false;
+                    });
                 };
             }
         };

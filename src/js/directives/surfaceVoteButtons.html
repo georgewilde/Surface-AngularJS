@@ -1,0 +1,8 @@
+<span>
+    <button type="button"
+            ng-repeat="voteValue in availableVoteValues"
+            class="btn-sm btn btn-success addVoteButton"
+            ng-click="addVote(story, voteValue, $event); $event.stopPropagation();">
+        {{voteValue}}
+    </button>
+</span>

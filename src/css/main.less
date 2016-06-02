@@ -5,29 +5,26 @@
 body {
     padding-top: 70px;
 }
+
 a:hover,
 a:focus {
     color: #FFF;
     text-decoration: none;
 }
+
 h1 {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
+
 .buffer-bottom {
     margin-bottom: 15px;
 }
+
 .buffer-top {
     margin-top: 15px;
 }
-.fixed {
-    position: fixed;
-}
-@media (min-width: @screen-sm-min) {
-    .fixed {
-        position: inherit;
-    }
-}
+
 .navbar-default {
     border: none;
     background: #1F1F1F;
@@ -36,16 +33,16 @@ h1 {
     .navbar-brand {
         padding: 13px 15px;
 
-	    a {
-		    color: #e84238;
+        a {
+            color: #e84238;
 
-		    &:hover {
-			    color: #FFF;
-		    }
-	    }
-	    .logoText {
-		    padding: 3px 0 0px 15px;
-	    }
+            &:hover {
+                color: #FFF;
+            }
+        }
+        .logoText {
+            padding: 3px 0 0px 15px;
+        }
     }
 
     .navbar-brand,
@@ -68,10 +65,13 @@ h1 {
         color: #fcf8e3;
     }
 }
+
 .page {
-	padding: 30px;
-	background-color: @page-bg;
+    padding: 30px;
+    background-color: @page-bg;
+    margin-bottom: 15px;
 }
+
 .storyList {
     .story {
         margin-bottom: 10px;
@@ -82,31 +82,32 @@ h1 {
         background-color: #1F1F1F;
         cursor: pointer;
     }
-    .voteContainer {
-        float: left;
-        margin-right: 15px;
-        text-align: center;
-        padding: 10px;
-
-        .vote {
-            padding-top: 9px;
-            height: 75px;
-            width: 75px;
-            text-align: center;
-            font-size: 40px;
-        }
-    }
-    .detailContainer {
-        margin-left: 110px;
-
-        h2 {
-            margin-top: 0;
-        }
-    }
-	.addVoteButton {
-		margin-right: 5px;
-	}
 }
+.voteContainer {
+    float: left;
+    margin-right: 15px;
+    text-align: center;
+    padding: 10px;
+
+    .vote {
+        padding-top: 9px;
+        height: 75px;
+        width: 75px;
+        text-align: center;
+        font-size: 40px;
+    }
+}
+.detailContainer {
+    margin-left: 110px;
+
+    h2 {
+        margin-top: 0;
+    }
+}
+.addVoteButton {
+    margin-right: 5px;
+}
+
 .userList {
     .user {
         margin-bottom: 10px;
@@ -118,6 +119,7 @@ h1 {
         cursor: pointer;
     }
 }
+
 .commentCount {
     font-size: 30px;
     position: relative;
@@ -134,25 +136,34 @@ h1 {
         font-family: 'Lato', sans-serif;
     }
 }
-.commentsHeader {
-    h2 {
-        margin: 50px 30px 10px;
+
+#AddNewComment {
+    .commentText {
+        height: 100px;
     }
 }
+
 .commentContainer {
     background-color: @page-bg;
     padding: 30px;
-    margin-top: 15px;
+    margin-bottom: 15px;
 }
+
 .commentPage {
     padding-bottom: 30px;
 }
+
 .mainPage.ng-enter {
-    -webkit-animation:fadeIn 0.2s both ease-out;
-    -moz-animation:fadeIn 0.2s both ease-out;
-    animation:fadeIn 0.2s both ease-out;
+    -webkit-animation: fadeIn 0.2s both ease-out;
+    -moz-animation: fadeIn 0.2s both ease-out;
+    animation: fadeIn 0.2s both ease-out;
 }
+
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

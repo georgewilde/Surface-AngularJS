@@ -1,17 +1,22 @@
 <div class="row">
     <div class="col-xs-12">
-        <form class="form-horizontal">
+        <form id="AddNewComment" name="AddNewComment" class="form-horizontal">
             <div class="form-group">
-                <div class="col-md-10">
-                    <textarea class="form-control" type="text" id="commentText" name="commentText"
-                              ng-model="comment.commentText"></textarea>
+                <div class="col-md-12 col-lg-9">
+                    <textarea class="form-control commentText"
+                              type="text"
+                              id="commentText"
+                              name="commentText"
+                              ng-model="comment.commentText"
+                              ng-required="true"
+                              placeholder="Say something about this story..."></textarea>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-md-12 col-lg-3">
                     <div class="btn-toolbar">
                         <button type="submit"
                                 class="btn btn-primary pull-right"
                                 ng-click="saveNewComment(comment)"
-                                ng-disabled="isSubmitting">
+                                ng-disabled="isSubmitting || AddNewComment.$invalid">
                             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                             {{isSubmitting ? 'Adding...' : 'Add Comment'}}
                         </button>
