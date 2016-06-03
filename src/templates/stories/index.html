@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <surface-new-story-button></surface-new-story-button>
+                <button class="btn btn-primary" ng-click="authenticate('google')">Sign in with Google</button>
             </div>
         </div>
         <div class="row storyList">
@@ -17,8 +18,9 @@
                     <div class="buffer-top">
                         <surface-vote-buttons story="story"></surface-vote-buttons>
                         <div class="pull-right">
-                        <span class="glyphicon glyphicon-comment commentCount" aria-hidden="true"><span
-                                class="commentCountText">{{story.commentCount}}</span></span>
+                            <span class="glyphicon glyphicon-comment commentCount" aria-hidden="true">
+                                <span class="commentCountText">{{story.commentCount}}</span>
+                            </span>
                         </div>
                     </div>
                 </div>

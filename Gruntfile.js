@@ -43,6 +43,7 @@ module.exports = function (grunt) {
                     'bower_components/angular-confirm-modal/angular-confirm.js',
                     'bower_components/underscore/underscore.js',
                     'bower_components/jquery-numerator/jquery-numerator.js',
+                    'bower_components/satellizer/satellizer.js',
                     'src/js/vendor/angular-velocity.js',
                     'src/js/annotated.js'
                 ],
