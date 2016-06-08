@@ -103,11 +103,16 @@ module.exports = function (grunt) {
         'release'
     ]);
 
-    grunt.registerTask('release', [
+    grunt.registerTask('initialise', [
         'copy',
+        'customize-bootstrap',
         'less',
         'ngAnnotate',
-        'concat',
+        'concat'
+    ]);
+
+    grunt.registerTask('release', [
+        'initialise',
         'uglify'
     ]);
 

@@ -21,7 +21,7 @@
     "jshint": "^2.8.0"
   },
   "scripts": {
-    "postinstall": "bower install && grunt prepare_develop",
+    "postinstall": "bower install && grunt initialise",
     "start": "node app.js"
   }
 }
